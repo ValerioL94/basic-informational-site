@@ -1,15 +1,14 @@
-const http = require('http');
-const fs = require('fs');
-const url = require('url');
+const http = require('node:http');
+const fs = require('node:fs');
 
 const server = http.createServer((req, res) => {
-  console.log(req.url);
-  const parsedURL = url.parse(req.url, true);
+  const myURL = new URL(req.url, `http://${req.headers.host}`);
+
   // set correct path
   const path =
-    parsedURL.pathname === '/'
+    myURL.pathname === '/'
       ? './pages/index.html'
-      : `./pages/${parsedURL.pathname}.html`;
+      : `./pages${myURL.pathname}.html`;
 
   // send the correct html file
   fs.readFile(path, (err, data) => {
