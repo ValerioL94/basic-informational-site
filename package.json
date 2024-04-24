@@ -1,13 +1,19 @@
 {
   "name": "basic-informational-site",
   "version": "1.0.0",
-  "description": "Making a basic informational site using node.js",
-  "main": "index.js",
+  "description": "Making a basic informational site using node/express",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "ValerioL94",
   "homepage": "https://github.com/ValerioL94/basic-informational-site",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
